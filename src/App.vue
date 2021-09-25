@@ -1,20 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <GetForecast />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import GetForecast from "./components/GetForecast.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    GetForecast,
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style>
+body {
+  background-color: #acadbc;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
