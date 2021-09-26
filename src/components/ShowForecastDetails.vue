@@ -1,6 +1,6 @@
 <template>
   <div class="dayDetails">
-    <span class="helper">
+    <span>
       <img
         v-bind:src="day.icon"
         v-bind:alt="day.shortForecast"
@@ -9,7 +9,8 @@
     </span>
 
     <span class="dayText">
-      {{ day.name }}<br />
+      <h3>{{ day.name }}</h3>
+      <br />
       {{ day.shortForecast }}<br />
       {{ day.detailedForecast }}<br />
     </span>
@@ -28,21 +29,26 @@ export default {
 </script>
 
 <style>
+h3 {
+  padding: 0px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
 .dayDetails {
   background-color: #9b9ece;
   color: #000500;
   border-radius: 15px;
   border-color: black;
   display: flex;
-  flex-flow: row wrap;
   overflow: hidden;
   padding: 10px;
   text-align: left;
   margin: 8px;
 }
 .dayText {
-  margin-left: 100px;
-  vertical-align: top;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
 }
 .helper {
   display: inline-block;
@@ -50,9 +56,8 @@ export default {
   vertical-align: middle;
 }
 .forecastImage {
-  float: left;
-  margin-right: 10px;
+  display: inline-block;
+  align-content: center;
   vertical-align: middle;
-  max-height: 86px;
 }
 </style>

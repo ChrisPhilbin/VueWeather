@@ -44,6 +44,7 @@ export default {
   },
   methods: {},
   async created() {
+    document.title = `Currently in ${this.currentWeatherResponseData.name}`;
     let { lat, lon } = this.currentWeatherResponseData.coord;
     try {
       this.currentForecastIsLoading = true;
