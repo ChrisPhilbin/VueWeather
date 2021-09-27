@@ -42,6 +42,11 @@ export default {
       currentForecastFinishedLoading: false,
     };
   },
+  watch: {
+    currentWeatherResponseData(newValue, oldValud) {
+      document.title = `Currently in ${this.currentWeatherResponseData.name}`;
+    },
+  },
   methods: {},
   async created() {
     document.title = `Currently in ${this.currentWeatherResponseData.name}`;
@@ -52,6 +57,7 @@ export default {
         `https://api.weather.gov/points/${lat},${lon}`
       );
       let data = await response.json();
+      console.log(data);
       let forecastURL = data.properties.forecast;
       try {
         let gridpointsResponse = await fetch(`${forecastURL}`);
